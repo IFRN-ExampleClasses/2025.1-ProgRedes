@@ -37,15 +37,15 @@ else:
     exifSize      = int.from_bytes(exifSize, byteorder=BYTE_ORDER[tiffHeader])
     countMetadata = int.from_bytes(countMetadata, byteorder=BYTE_ORDER[tiffHeader])
 
-    dicEXIF = { 'exifSize' : exifSize, 'exifMarker': exifHeader, 
-                'temp1'    : temp1   , 'tiffHeader': tiffHeader, 
-                'temp2'    : temp2   , 'temp3'     : temp3,
-                'metaCount': countMetadata}
+    dictEXIF = { 'exifSize' : exifSize, 'exifMarker': exifHeader, 
+                 'temp1'    : temp1   , 'tiffHeader': tiffHeader, 
+                 'temp2'    : temp2   , 'temp3'     : temp3,
+                 'metaCount': countMetadata}
 
     # Imprimindo os resultados
     print('\n\nINÍCIO DO HEADER')
     print('-'*80)
-    print(f'{dicEXIF}\n\n')
+    print(f'{dictEXIF}\n\n')
 
     # Obtendo os Metadados Brutos
     lstRAWMetadata = list()
@@ -58,7 +58,7 @@ else:
         lstTemp = [idTAGNumber, idDataFormat, numberComponents, dataValue]
         lstRAWMetadata.append(dict(zip(METADATA_HEADER, lstTemp)))
 
-    # Imprimindo os metadados lidos
+    # Imprimindo os metadados brutos
     print('METADADOS LIDOS (BRUTOS)')
     print('-'*80)
     for metaData in lstRAWMetadata: print(metaData)

@@ -1,10 +1,21 @@
 import os
 
 # --------------------------------------------------------------------------------
-DIR_APP = os.path.dirname(os.path.abspath(__file__))
+# Diretório onde a aplicação está armazenada
+DIR_APP = os.path.dirname(__file__)
+
+# Diretório onde as imagens estão armazenadas
 DIR_IMG = DIR_APP + '\\images'
 
-CODE_PAGE = 'utf-8'
+# Define a página de códigos de caracteres
+CODE_PAGE  = 'utf-8'
+
+# Define se os dados brutos serão impressos
+PRINT_RAW  = True    
+
+# Define se os dados tratados serão impressos
+PRINT_DEAL = False   
+
 
 # --------------------------------------------------------------------------------
 EXIF_HEADER     = ['exifSize', 'exifMarker', 'temp1', 'tiffHeader', 'temp2', 'temp3', 'metaCount']
@@ -60,4 +71,23 @@ DATA_FORMAT = {
    b'\x07\x00': 'Undefinied'       , b'\x08\x00': 'Signed Short', 
    b'\x09\x00': 'Signed Long'      , b'\x10\x00': 'Signed Rational', 
    b'\x11\x00': 'Single Float'     , b'\x12\x00': 'Double Float'
+}
+
+GPS_TAG_NUMBER = {
+   b'\x00\x00': 'GPSVersionID'      , b'\x00\x01': 'GPSLatitudeRef',
+   b'\x00\x02': 'GPSLatitude'       , b'\x00\x03': 'GPSLongitudeRef',
+   b'\x00\x04': 'GPSLongitude'      , b'\x00\x05': 'GPSAltitudeRef',
+   b'\x00\x06': 'GPSAltitude'       , b'\x00\x07': 'GPSTimeStamp',
+   b'\x00\x08': 'GPSSatellites'     , b'\x00\x09': 'GPSStatus',
+   b'\x00\x0a': 'GPSMeasureMode'    , b'\x00\x0b': 'GPSDOP',
+   b'\x00\x0c': 'GPSSpeedRef'       , b'\x00\x0d': 'GPSSpeed',
+   b'\x00\x0e': 'GPSTrackRef'       , b'\x00\x0f': 'GPSTrack',
+   b'\x00\x10': 'GPSImgDirectionRef', b'\x00\x11': 'GPSImgDirection',
+   b'\x00\x12': 'GPSMapDatum'       , b'\x00\x13': 'GPSDestLatitudeRef',
+   b'\x00\x14': 'GPSDestLatitude'   , b'\x00\x15': 'GPSDestLongitudeRef',
+   b'\x00\x16': 'GPSDestLongitude'  , b'\x00\x17': 'GPSDestBearingRef',
+   b'\x00\x18': 'GPSDestBearing'    , b'\x00\x19': 'GPSDestDistanceRef',
+   b'\x00\x1a': 'GPSDestDistance'   , b'\x00\x1b': 'GPSProcessingMethod',
+   b'\x00\x1c': 'GPSAreaInformation', b'\x00\x1d': 'GPSDateStamp',
+   b'\x00\x1e': 'GPSDifferential'
 }

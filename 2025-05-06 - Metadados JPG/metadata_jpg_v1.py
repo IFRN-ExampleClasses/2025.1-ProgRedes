@@ -45,10 +45,10 @@ else:
         exifSize      = int.from_bytes(exifSize, byteorder='big')
         countMetadata = int.from_bytes(countMetadata, byteorder='big')
 
-    dicEXIF = { 'exifSize' : exifSize, 'exifMarker': exifHeader, 
-                'temp1'    : temp1   , 'tiffHeader': tiffHeader, 
-                'temp2'    : temp2   , 'temp3'     : temp3,
-                'metaCount': countMetadata}
+    dictEXIF = { 'exifSize' : exifSize, 'exifMarker': exifHeader, 
+                 'temp1'    : temp1   , 'tiffHeader': tiffHeader, 
+                 'temp2'    : temp2   , 'temp3'     : temp3,
+                 'metaCount': countMetadata}
 
     # Obtendo os Metadados
     lstMetadata   = list()
@@ -65,7 +65,7 @@ else:
     fileInput.close()
 
     # Imprimindo os resultados
-    print('\n\n', dicEXIF, '\n\n')
+    print('\n\n', dictEXIF, '\n\n')
     
     # Imprimindo os metadatas lidos
     for metaData in lstMetadata: print(metaData)
