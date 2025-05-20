@@ -11,6 +11,9 @@ family    = get_protnumber('AF_')
 types     = get_protnumber('SOCK_')
 protocols = get_protnumber('IPPROTO_')
 
+print(protocols)
+exit()
+
 server = input('\nInforme o nome do HOST ou URL do site: ')
 
 try:

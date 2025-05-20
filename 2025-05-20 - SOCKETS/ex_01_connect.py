@@ -9,6 +9,7 @@ except:
    sys.exit(f'\nERRO: Não foi possível resolver o nome do host.\n{sys.exc_info()}')
 else:
    socketTeste = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   #socketTeste.settimeout(5)
    try:
       socketTeste.connect((strIPHost, intPort))
    except:
