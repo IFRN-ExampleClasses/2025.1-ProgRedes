@@ -85,7 +85,7 @@ def main():
             
             with open(os.path.join(dir_host, f'conteudo_porta_{PORT_HTTP}.txt'), 'w', encoding=CODE_PAGE) as f:
                 f.write(strContent)
-                
+              
     except Exception as e:
         sys.exit(f'\nERRO.... {type(e).__name__}\n{str(e)}')
     finally:
