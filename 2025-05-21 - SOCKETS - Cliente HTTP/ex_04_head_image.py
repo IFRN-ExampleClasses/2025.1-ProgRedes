@@ -24,9 +24,12 @@ CODE_PAGE   = 'utf-8'
 BUFFER_SIZE = 1024
 # --------------------------------------------------
 
-strHost  = 'www.httpbin.org'
-strImage = '/image/png'
+#strHost  = 'www.httpbin.org'
+#strImage = '/image/webp'
 
+
+strHost = 'wallpapers.com'
+strImage = '/images/high/4k-star-wars-the-last-jedi-660ztmpvnlox8hlm.webp'
 sockTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
