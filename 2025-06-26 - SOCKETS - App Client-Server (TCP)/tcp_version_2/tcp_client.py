@@ -8,7 +8,6 @@ sockTCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Conectando ao servidor
 sockTCP.connect((HOST_IP_SERVER, HOST_PORT))
 
-
 print('\n\nPara sair digite EXIT...\n\n')
 
 while True:
