@@ -27,7 +27,7 @@ while True:
     print(f'Conexão estabelecida com {tuplaCliente}')
 
     # Recebendo dados do cliente
-    byteMensagem = connConexao.recv(1024)
+    byteMensagem = connConexao.recv(BUFFER_SIZE)
 
     # Imprimindo a mensagem recebida convertendo de bytes para string
     print(f'{tuplaCliente}: {byteMensagem.decode(CODE_PAGE)}')
