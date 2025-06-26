@@ -1,11 +1,17 @@
 import socket
 
-from constantes import *
+# ----------------------------------------------------------------------
+HOST_IP_SERVER    = '10.24.7.185'   # Definindo o IP do servidor
+HOST_PORT         = 60000           # Definindo a porta
+
+CODE_PAGE         = 'utf-8'         # Definindo a página de caracteres
+BUFFER_SIZE       = 512             # Tamanho do buffer
+# ----------------------------------------------------------------------
 
 # Criando o socket (socket.AF_INET -> IPV4 / socket.SOCK_DGRAM -> UDP)
 sockUDP = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-print('\n\nPara sair use EXIT...\n\n')
+print('\n\nPara sair digite EXIT...\n\n')
 
 while True:
    # Informando a mensagem a ser enviada para o servidor
