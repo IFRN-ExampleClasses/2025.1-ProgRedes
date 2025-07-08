@@ -12,7 +12,7 @@ def getAjuda():
 
 
 # ------------------------------------------------------------
-def enviarArquivo(sockDestino: socket, strNomeArquivo: str, destino: tuple[str, int]) -> bool:
+def enviarArquivo(sockDestino: socket, strNomeArquivo: str, destino: tuple) -> bool:
    try:
       # Verifica se o arquivo existe e tem permissão de leitura
       if not os.path.isfile(strNomeArquivo):
