@@ -20,7 +20,9 @@ while True:
    if not strMensagem.startswith('\\'):
       strMensagemRetorno = 'ERRO: Comandos iniciam com \\. Digite \\? para ajuda...'
    elif strMensagem == '\\?':
-      strMensagemRetorno = getAjuda()  
+      strMensagemRetorno = getAjuda()
+   elif strMensagem == '\\f':
+      strMensagem = listarDiretorio(DIR_IMG_SERVER)
    elif strMensagem.startswith('\\d:'):
       strComando, strNomeArquivo = strMensagem.split(':')
       if not strNomeArquivo:

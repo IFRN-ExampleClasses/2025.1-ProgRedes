@@ -2,7 +2,7 @@ import socket, os
 
 from constantes import *
 
-# ------------------------------------------------------------
+# --------------------------------------------------------------------------------
 def getAjuda():
    strAjuda  = '\nAJUDA DO APP:\n'
    strAjuda += '\? -> Ajuda\n'
@@ -11,7 +11,7 @@ def getAjuda():
    return strAjuda
 
 
-# ------------------------------------------------------------
+# --------------------------------------------------------------------------------
 def enviarArquivo(sockDestino: socket, strNomeArquivo: str, destino: tuple) -> bool:
    try:
       # Verifica se o arquivo existe e tem permissão de leitura
@@ -51,3 +51,21 @@ def enviarArquivo(sockDestino: socket, strNomeArquivo: str, destino: tuple) -> b
 
    except Exception as e:
       raise e
+   
+
+# --------------------------------------------------------------------------------
+def listarDiretorio(strDiretorio: str) -> list:
+   # Monta lista de arquivos
+   lstRetorno = list()
+   for strNomeArquivo in os.listdir(strDiretorio):
+      strPathArquivo = os.path.join(strDiretorio, strNomeArquivo)
+      if os.path.isfile(strPathArquivo):
+         tamanho = os.path.getsize(strPathArquivo)
+         lstRetorno.append([strNomeArquivo, tamanho])
+
+   # Monta a string formatada
+   lstLinhas  = [f'{strNome} ({intTamanho} bytes)' for strNome, intTamanho in lstRetorno]
+   strRetorno = '\n'.join(lstLinhas)
+   strRetorno  = '\nARQUIVOS:\n' + strRetorno + '\n'
+   return strRetorno
+
