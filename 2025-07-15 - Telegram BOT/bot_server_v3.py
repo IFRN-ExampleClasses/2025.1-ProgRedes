@@ -20,7 +20,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Define o token do Bot (recomendado usar variáveis de ambiente)
-API_TOKEN = '5671451820:AAH9qmCpnza1vQ0pdoDq97-KMg9vopihQys'
+API_TOKEN = 'YOUR_TOKEN_HERE'
 
 # URLs de requisição
 strURLBase        = f'https://api.telegram.org/bot{API_TOKEN}'
