@@ -1,7 +1,7 @@
 '''
    1) Instalar a biblioteca do Gemini
 
-      a) pip install google-generativeai
+      a) pip install google-generativeai --user
 
    2) Obter uma API Key do Google AI:
 
@@ -12,10 +12,10 @@
 
 import google.generativeai as genai
 
-from token_api import *
+from api_tokens import *
 
 # ----------------------------------------------------------------------
-# Colocando a chave da API
+# Colocando chave da API
 genai.configure(api_key=strTokenGemini)
 
 # Criando  uma instância do modelo Gemini

@@ -1,17 +1,17 @@
 '''
-   1) Obtenha uma API Key da DeepSeek Cloud:
+   1) Obter uma API Key da DeepSeek Cloud:
 
       a) https://platform.deepseek.com
 
-      b) Crie uma conta e gere sua API Key.
+      b) Criar uma conta e gere sua API Key.
 '''
 
 import requests
 
-from token_api import *
+from api_tokens import *
 
 # ----------------------------------------------------------------------
-# Substitua aqui com a sua chave da DeepSeek
+# Definindo os parêmtros iniciais da API do DeepSeek
 API_KEY = strTokenDeepseek
 API_URL = 'https://api.deepseek.com/v1/chat/completions'
 
@@ -35,7 +35,7 @@ def perguntarIA(strPrompt: str) -> str:
       return data['choices'][0]['message']['content'].strip()
 
    except Exception as e:
-      return f'ERRO: {e}...'
+      return f'\nERRO: {e}...'
 
 
 # ----------------------------------------------------------------------

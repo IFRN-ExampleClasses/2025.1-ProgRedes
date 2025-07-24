@@ -1,41 +1,33 @@
 '''
-   1) Obtenha uma API Key da DeepSeek Cloud:
+   1) Instalar a biblioteca da OpenAI
 
-      a) https://platform.deepseek.com
+      a) pip install openai --user
 
-      b) Crie uma conta e gere sua API Key.
+   2) Obter uma API Key da OpenAI:
+
+      a) https://platform.openai.com
+
+      b) Gerar sua API Key.
 '''
 
-import requests
+import openai
 
-from token_api import *
+from api_tokens import *
 
 # ----------------------------------------------------------------------
-# Substitua aqui com a sua chave da DeepSeek
-API_KEY = strTokenDeepseek
-API_URL = 'https://api.deepseek.com/v1/chat/completions'
-
-HEADERS = {
-    'Authorization': f'Bearer {API_KEY}',
-    'Content-Type': 'application/json'
-}
+# Criando um cliente com o modelo
+clienteOpenAI = openai.OpenAI(api_key = strTokenOpenAI)
 
 # ----------------------------------------------------------------------
 def perguntarIA(strPrompt: str) -> str:
    try:
-      payload = {
-         'model'      : 'deepseek-chat',  # ou 'deepseek-coder' se preferir
-         'messages'   : [ {'role': 'user', 'content': strPrompt} ],
-         'temperature': 0.7
-      }
-
-      reqEnvio = requests.post(API_URL, headers=HEADERS, json=payload)
-      reqEnvio.raise_for_status()
-      data = reqEnvio.json()
-      return data['choices'][0]['message']['content'].strip()
-
+      resposta = clienteOpenAI.chat.completions.create(
+         model = 'gpt-3.5-turbo',  # Ou gpt-4, se sua conta permitir
+         messages = [ {'role': 'user', 'content': strPrompt}]
+      )
+      return resposta.choices[0].message.content.strip()
    except Exception as e:
-      return f'ERRO: {e}...'
+      return f'\nERRO: {e}...'
 
 
 # ----------------------------------------------------------------------
