@@ -1,5 +1,5 @@
 '''
-   Obtenha uma API Key da DeepSeek Cloud:
+   1) Obtenha uma API Key da DeepSeek Cloud:
 
       a) https://platform.deepseek.com
 
