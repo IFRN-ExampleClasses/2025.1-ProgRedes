@@ -22,7 +22,7 @@ clienteOpenAI = openai.OpenAI(api_key = strTokenOpenAI)
 def perguntarIA(strPrompt: str) -> str:
    try:
       resposta = clienteOpenAI.chat.completions.create(
-         model = 'gpt-3.5-turbo',  # Ou gpt-4, se sua conta permitir
+         model    = 'gpt-3.5-turbo',  # Ou gpt-4, se sua conta permitir
          messages = [ {'role': 'user', 'content': strPrompt}]
       )
       return resposta.choices[0].message.content.strip()
