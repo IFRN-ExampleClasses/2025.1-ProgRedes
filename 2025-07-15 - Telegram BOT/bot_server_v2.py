@@ -1,7 +1,9 @@
 import os, sys, requests, platform
 
-# Define o token do Bot
-API_TOKEN = 'YOUR_TOKEN_HERE'
+# Deve ser criado um arquivo com o nome token.py
+# e dentro criar a "constante" API_TOKEN e
+# atribuir o valor do token informado pelo Bot Father
+from token_bot import *
 
 # Definine as URLs 
 strURLBase        = f'https://api.telegram.org/bot{API_TOKEN}'

@@ -8,6 +8,11 @@ import logging
 from pynput import keyboard
 from bot_funcoes import dictComandos, exibeBoasVindas, getKey, processar_mensagem
 
+# Deve ser criado um arquivo com o nome token.py
+# e dentro criar a "constante" API_TOKEN e
+# atribuir o valor do token informado pelo Bot Father
+from token_bot import *
+
 # ----------------------------------------------------------------------
 # Configuração do Logging (apenas para arquivo)
 logging.basicConfig(
@@ -18,9 +23,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
-# Define o token do Bot (recomendado usar variáveis de ambiente)
-API_TOKEN = 'YOUR_TOKEN_HERE'
 
 # URLs de requisição
 strURLBase        = f'https://api.telegram.org/bot{API_TOKEN}'
