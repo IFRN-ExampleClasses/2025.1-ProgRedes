@@ -19,7 +19,7 @@ from api_tokens import *
 clienteOpenAI = openai.OpenAI(api_key = strTokenOpenAI)
 
 # ----------------------------------------------------------------------
-def perguntarIA(strPrompt: str) -> str:
+def perguntarOPENAI(strPrompt: str) -> str:
    try:
       resposta = clienteOpenAI.chat.completions.create(
          model    = 'gpt-3.5-turbo',  # Ou gpt-4, se sua conta permitir
@@ -38,7 +38,7 @@ def main():
          print('\nSaindo do Programa...')
          break
 
-      strResposta = perguntarIA(strTexto)
+      strResposta = perguntarOPENAI(strTexto)
       print(f'\nResposta do DEEPSEEK:\n{strResposta}')
 
 # ----------------------------------------------------------------------

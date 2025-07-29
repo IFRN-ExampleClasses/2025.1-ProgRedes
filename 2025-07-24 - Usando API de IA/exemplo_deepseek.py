@@ -21,7 +21,7 @@ HEADERS = {
 }
 
 # ----------------------------------------------------------------------
-def perguntarIA(strPrompt: str) -> str:
+def perguntarDEEPSEEK(strPrompt: str) -> str:
    try:
       payload = {
          'model'      : 'deepseek-chat',  # ou 'deepseek-coder' se preferir
@@ -46,7 +46,7 @@ def main():
          print('\nSaindo do Programa...')
          break
 
-      strResposta = perguntarIA(strTexto)
+      strResposta = perguntarDEEPSEEK(strTexto)
       print(f'\nResposta do DEEPSEEK:\n{strResposta}')
 
 # ----------------------------------------------------------------------
